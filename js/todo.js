@@ -26,6 +26,9 @@ const todo = {
    *
    */
   add(item) {
+
+    this.items.push(item)
+    
     // 스케줄 목록 날짜별 내림 차순으로 정렬 처리
     if (this.items.length > 0) {
       this.items.sort((i1, i2) => {
@@ -34,8 +37,6 @@ const todo = {
         return date2 - date1
       })
     }
-
-    this.items.push(item)
 
     this.save() // 변경 사항 저장 처리
 
